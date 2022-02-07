@@ -1,0 +1,104 @@
+{
+  "projectType": "application",
+  "root": "apps/professor",
+  "sourceRoot": "apps/professor/src",
+  "prefix": "ng-mfe",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/professor",
+        "index": "apps/professor/src/index.html",
+        "main": "apps/professor/src/main.ts",
+        "polyfills": "apps/professor/src/polyfills.ts",
+        "tsConfig": "apps/professor/tsconfig.app.json",
+        "inlineStyleLanguage": "sass",
+        "assets": [
+          "apps/professor/src/favicon.ico",
+          "apps/professor/src/assets"
+        ],
+        "styles": ["apps/professor/src/styles.sass"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/professor/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/professor/src/environments/environment.ts",
+              "with": "apps/professor/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/professor/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "professor:build:production"
+        },
+        "development": {
+          "browserTarget": "professor:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4202,
+        "publicHost": "http://localhost:4202"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "professor:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/professor/src/**/*.ts",
+          "apps/professor/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/professor"],
+      "options": {
+        "jestConfig": "apps/professor/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
