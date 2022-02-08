@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { TestCompComponent } from './test-comp/test-comp.component';
-
+import { TestModule } from './test-module/test.module.module';
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [

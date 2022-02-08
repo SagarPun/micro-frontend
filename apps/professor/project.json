@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/professor",
         "index": "apps/professor/src/index.html",
@@ -18,7 +20,9 @@
           "apps/professor/src/favicon.ico",
           "apps/professor/src/assets"
         ],
-        "styles": ["apps/professor/src/styles.sass"],
+        "styles": [
+          "apps/professor/src/styles.sass"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/professor/webpack.config.js"
@@ -93,7 +97,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/professor"],
+      "outputs": [
+        "coverage/apps/professor"
+      ],
       "options": {
         "jestConfig": "apps/professor/jest.config.js",
         "passWithNoTests": true

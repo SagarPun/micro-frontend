@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/student",
         "index": "apps/student/src/index.html",
@@ -14,8 +16,13 @@
         "polyfills": "apps/student/src/polyfills.ts",
         "tsConfig": "apps/student/tsconfig.app.json",
         "inlineStyleLanguage": "sass",
-        "assets": ["apps/student/src/favicon.ico", "apps/student/src/assets"],
-        "styles": ["apps/student/src/styles.sass"],
+        "assets": [
+          "apps/student/src/favicon.ico",
+          "apps/student/src/assets"
+        ],
+        "styles": [
+          "apps/student/src/styles.sass"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/student/webpack.config.js"
@@ -90,7 +97,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/student"],
+      "outputs": [
+        "coverage/apps/student"
+      ],
       "options": {
         "jestConfig": "apps/student/jest.config.js",
         "passWithNoTests": true

@@ -48,6 +48,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './Module': 'apps/professor/src/app/remote-entry/entry.module.ts',
+        './TestModule': 'apps/professor/src/app/test-module/test.module.ts',
       },
       shared: share({
         '@angular/core': {

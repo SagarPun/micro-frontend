@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
+import { ListUiComponent } from '../list-ui/list-ui.component';
 
 @NgModule({
   declarations: [RemoteEntryComponent],
@@ -12,6 +13,10 @@ import { RemoteEntryComponent } from './entry.component';
       {
         path: '',
         component: RemoteEntryComponent,
+      },
+      {
+        path: 'list',
+        component: ListUiComponent,
       },
     ]),
   ],
